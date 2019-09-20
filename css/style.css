@@ -1,0 +1,436 @@
+/**************************************************
+*******************GENERALITES*********************
+**************************************************/
+html{
+  font-size:90%;
+}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+  font-size:90%;
+}
+
+body{
+  background-image: url("../img/Floral_Backgrounds.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Livvic', sans-serif;
+  font-size:1.2rem;
+  line-height:1.8;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #558080;
+}
+
+a{
+  text-decoration: none;
+  color: #558080;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #A882D5;
+}
+
+h1, h2, h3{
+  font-family: 'Bad Script', cursive;
+  font-weight:bold;
+}
+
+h1{
+  font-size: 2.8rem;
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
+
+h2{
+  text-align: center;
+  font-size: 2.4rem;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+h3{
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+h4{
+  margin-left: 15px;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+
+
+/**************************************************
+**********************HEADER***********************
+**************************************************/
+header{
+  margin-bottom:50px;
+  text-align:center;
+}
+
+header img{
+  width: 200px;
+  border:solid 10px #558080;
+  -moz-border-radius: 65px;
+  -webkit-border-radius: 65px;
+  border-radius: 65px;
+  -moz-box-shadow:inset -43px 27px 31px #558080;
+  -webkit-box-shadow:inset -43px 27px 31px #558080;
+  box-shadow:inset -43px 27px 31px #558080;
+}
+
+nav li{
+  padding: 40px 50px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.8rem;
+  font-family: 'Bad Script', cursive;
+}
+
+nav a{
+  text-decoration: none;
+  color:  #558080;
+}
+
+nav a:hover{
+  text-decoration: none;
+  color: #A882D5;
+}
+
+
+ul, li{
+  list-style:none;
+}
+
+blockquote{
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+}
+
+cite{
+  color: #558080;
+}
+
+header p{
+  margin-top: 30px;
+}
+
+
+
+
+
+/**************************************************
+***********************POPIN***********************
+**************************************************/
+
+
+.modale{
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 1050;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+  pointer-events: none;
+  overflow: auto;
+}
+
+.modale:target{
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modale > div{
+	width: 70%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  border:double 5px #a883d6;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright:5px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  background-color: #ffecff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.close{
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover{
+  background: #A882D5;
+}
+
+.modale.hidden:target{
+  pointer-events: none;
+  opacity:0;
+}
+
+
+
+/**************************************************
+*******************Mon parcours********************
+**************************************************/
+
+.logo img{
+  height: 4rem;
+  margin-right: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+img.myPopover{
+  text-align: center;
+}
+
+
+
+/**************************************************
+*******************PROGRESS BAR********************
+**************************************************/
+
+.progress{
+  height: 30px;
+}
+
+.progress-bar-striped{
+  background-color: #558080;
+}
+
+.competences{
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+
+
+
+
+
+/**************************************************
+*********************QUALITES**********************
+**************************************************/
+
+
+
+/*Transition*/
+.fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+  opacity: 1;
+}
+
+  @keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+/*Etat final*/
+.qualite.fade-in{
+  opacity: 1;
+}
+
+
+
+
+
+/**************************************************
+*****************Mes réalisations******************
+**************************************************/
+
+#projets li:first-child{
+  display: inline-block;
+}
+
+
+
+
+/**************************************************
+********************FORMULAIRE*********************
+**************************************************/
+
+#contact img{
+  width:40px;
+  margin-top:15px;
+}
+#contact .errors li{
+  color:#f71818;
+  margin:0;
+}
+#contact .emailEnvoye {
+  font-weight:bold;
+  text-align:center;
+  color:#A882D5;
+}
+#form{
+  text-align:center;
+  margin-top:30px;
+  z-index: 1051;
+}
+
+
+input:nth-of-type(1){
+  background-image:url(../img/bg_form_name.svg);
+}
+
+input:nth-of-type(2){
+  background-image:url(../img/bg_form_mail.svg);
+}
+
+input, textarea{
+  padding:20px 20px 20px 70px;
+  border-radius:50px;
+  width:90%;
+  background-color:transparent;
+  border:solid 1px #558080;
+  margin-left:15px;
+  margin-bottom:10px;
+  color: #558080;
+  font-size: 100%;
+  background-repeat:no-repeat;
+  background-size:40px;
+  background-position:20px 20px;
+}
+
+
+
+textarea{
+  background-image:url(../img/bg_form_message.svg);
+}
+
+.required:after{
+  content: "*";
+  color:red;
+  font-weight: bold;
+  font-size: 150%;
+  padding-left:5px;
+}
+
+.bouton{
+  margin-top:15px;
+  margin-bottom:30px;
+  text-align:center;
+  background-color:#A882D5;
+  border-radius: 65px;
+  padding: 15px;
+  color: white;
+}
+
+
+
+/**************************************************
+************REGLES CSS MOBILES TABLETTE************
+**************************************************/
+@media screen and (max-width:500px){
+
+  input, textarea{
+    font-size: 0.8rem;
+    background-size: 13%;
+    padding: 10px 5px 10px 48px;
+    background-position: 10px 5px;
+
+  }
+
+  textarea{
+    border-radius:30px;
+  }
+}
+/* au dessus de 1024px, ce n'est pas un téléphone ou une tablette */
+@media (min-width: 1025px) {
+  .popoverContent {
+    display:none;
+  }
+}
+@media (max-width: 1024px) {
+  .popoverContent ul {
+    border-bottom: 1px solid;
+  }
+}

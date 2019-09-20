@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV QUATANNENS Laura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV de Laura QUATANNENS reprenant les principaux langages étudiés lors de la formation" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" /> <!--modifier css/normalize.css si pas de sous dossier css-->
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script%7CLivvic%7CPacifico&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c6691c3b59.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css" /> <!--modifier css/style.css si pas de sous dossier css-->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#parcours" title="parcours" class="lien">Mon parcours</a></li>
+                <li><a href="#competences" title="compétences" class="lien">Mon savoir-faire</a></li>
+                <li><a href="#qualites" title="qualités" id="lienQualites" class="lien">Mon savoir-être</a></li>
+                <li><a href="#projets" title="projets" class="lien">Mes réalisations</a></li>
+                <li><a href="#contact" title="contact" class="lien">Contactez-moi</a></li>
+            </ul>
+        </nav>
+
+
+        <a href="#"><img src="img/Profil.jpg" alt="Photo de profil" title="Photo de profil"></a>
+        <h1>QUATANNENS Laura</h1>
+        <blockquote>"Tout le monde savait que c'était impossible. Il est venu un imbécile qui ne le savait pas et qui l'a fait"</blockquote>
+
+        <cite>Marcel PAGNOL artiste, cinéaste, écrivain, scénariste (1895 - 1974)</cite>
+
+        <p>En reconversion professionnelle, j'effectue actuellement un stage PHP/Symfony d'une durée de 6 mois.
+           Je suis à la recherche d'un poste de développeur web junior me permettant de mettre en pratique les notions acquises lors de ma formation intensive de 3 mois et développer mes compétences acquises lors du stage.
+           Consciente de mon manque d'expérience, je compte redoubler d'effort et d'investissement pour rapidement devenir un véritable atout au sein de votre entreprise.</p>
+
+    </header>
+        <main class="container-fluid">
+
+            <section>
+                <div id="parcours" class="modale">
+                    <div class="noClose">
+                        <a href="#close" title="Close" class="close">X</a>
+
+                        <h2>Mon parcours</h2>
+                        <article>
+                            <ul>
+                                <li><i class="fas fa-birthday-cake"></i> 19 décembre 1986</li>
+                                <li>Permis A et B (véhicules personnels)</li>
+                                <li>Loisirs : moto, bricolage, lecture</li>
+                            </ul>
+                        </article>
+
+                        <article class="logo container-fluid">
+                            <h3>Formations</h3>
+                                <div class="row">
+                                    <?php foreach ($formations as $key => $formation) : ?>
+                                        <div class="col">
+                                            <div>
+                                                <a href="#" rel="nofollow" title="<?=$formation["ecole"]?>">
+                                                    <img class="myPopover"
+                                                    data-toggle="popover"
+                                                    data-placement="right" title="<strong>Détails de la formation</strong>"
+                                                    data-trigger="hover"
+                                                    data-html="true"
+                                                    alt="Logo <?=$formation["ecole"]?>"
+                                                    data-popover-content="#myPopoverContentFormation<?php echo $key ?>" src="img/<?=$formation["logo"]?>"/>
+                                                </a>
+                                            </div>
+
+                                            <!-- Content for Popover: -->
+                                            <div id="myPopoverContentFormation<?php echo $key ?>" class="popoverContent">
+                                                <ul class="pt-2">
+                                                    <li><em><strong>Etablisssement :</strong></em><br> <?=$formation["ecole"]?></li>
+                                                    <li><em><strong>Ville :</strong></em><br> <?=$formation["lieu"]?></li>
+                                                    <li><em><strong>Intitulé du diplôme :</strong></em><br> <?=$formation["diplome"]?></li>
+                                                    <li><em><strong>Niveau obtenu :</strong></em><br> <?=$formation["niveau"]?></li>
+                                                    <li><em><strong>Année d'obtention :</strong></em><br> <?=$formation["annee_obtention"]?></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    <?php endforeach ?>
+                                </div>
+
+                            <h3>Expériences</h3>
+                                <h4>Domaine social</h4>
+                                    <div class="row">
+                                        <?php foreach ($social as  $key => $educatrice) : ?>
+                                            <div class="col">
+                                                <div>
+                                                    <a href="#" rel="nofollow" title="<?=$educatrice["employeur"]?>">
+                                                        <img class="myPopover"
+                                                        data-toggle="popover"
+                                                        data-placement="right" title="<strong>Détails du poste</strong>"
+                                                        data-trigger="hover"
+                                                        data-html="true"
+                                                        alt="Logo <?=$educatrice["employeur"]?>"
+                                                        data-popover-content="#myPopoverContentSocial<?php echo $key ?>" src="img/<?=$educatrice["logo"]?>"/>
+                                                    </a>
+                                                </div>
+
+                                                <div id="myPopoverContentSocial<?php echo $key ?>" class="popoverContent">
+                                                    <ul class="pt-2">
+                                                        <li><em><strong>Domaine :</strong></em><br> <?=$educatrice["domaine"]?></li>
+                                                        <li><em><strong>Intitulé du poste :</strong></em><br> <?=$educatrice["poste"]?></li>
+                                                        <li><em><strong>Date de début :</strong></em><br> <?=$educatrice["date_debut"]?></li>
+                                                        <li><em><strong>Date de fin :</strong></em><br> <?=$educatrice["date_fin"]?></li>
+                                                        <li><em><strong>Employeur :</strong></em><br> <?=$educatrice["employeur"]?></li>
+                                                        <li><em><strong>Ville :</strong></em><br> <?=$educatrice["ville"]?></li>
+                                                        <li><em><strong>Description :</strong></em><br> <?=nl2br($educatrice["description"])?></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <?php endforeach ?>
+                                    </div>
+
+                                <h4>Domaine Ressources Humaines</h4>
+                                    <div class="row">
+                                        <?php foreach ($RH as $key => $paie) : ?>
+                                            <div class="col">
+                                                <div>
+                                                    <a href="#" rel="nofollow" title="<?=$paie["employeur"]?>">
+                                                        <img class="myPopover"
+                                                        data-toggle="popover"
+                                                        data-placement="right" title="<strong>Détails du poste</strong>"
+                                                        data-trigger="hover"
+                                                        data-html="true"
+                                                        alt="Logo <?=$paie["employeur"]?>"
+                                                        data-popover-content="#myPopoverContentRH<?php echo $key ?>" src="img/<?=$paie["logo"]?>"/>
+                                                    </a>
+                                                </div>
+
+                                                <div id="myPopoverContentRH<?php echo $key ?>" class="popoverContent">
+                                                    <ul class="pt-2">
+                                                        <li><em><strong>Domaine :</strong></em><br> <?=$paie["domaine"]?></li>
+                                                        <li><em><strong>Intitulé du poste :</strong></em><br> <?=$paie["poste"]?></li>
+                                                        <li><em><strong>Date de début :</strong></em><br> <?=$paie["date_debut"]?></li>
+                                                        <li><em><strong>Date de fin :</strong></em><br> <?=$paie["date_fin"]?></li>
+                                                        <li><em><strong>Employeur :</strong></em><br> <?=$paie["employeur"]?></li>
+                                                        <li><em><strong>Ville :</strong></em><br> <?=$paie["ville"]?></li>
+                                                        <li><em><strong>Description :</strong></em><br> <?=nl2br($paie["description"])?></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <?php endforeach ?>
+                                    </div>
+
+                                <h4>Domaine informatique</h4>
+                                    <div class="row">
+                                        <?php foreach ($info as $key => $dev) : ?>
+                                            <div class="col">
+                                                <div>
+                                                    <a href="#" rel="nofollow" title="<?=$dev["employeur"]?>">
+                                                        <img class="myPopover"
+                                                        data-toggle="popover"
+                                                        data-placement="right" title="<strong>Détails du poste</strong>"
+                                                        data-trigger="hover"
+                                                        data-html="true"
+                                                        alt="Logo <?=$dev["employeur"]?>"
+                                                        data-popover-content="#myPopoverContentInfo<?php echo $key ?>" src="img/<?=$dev["logo"]?>"/>
+                                                    </a>
+                                                </div>
+
+                                                <div id="myPopoverContentInfo<?php echo $key ?>" class="popoverContent">
+                                                    <ul class="pt-2">
+                                                        <li><em><strong>Domaine :</strong></em><br> <?=$dev["domaine"]?></li>
+                                                        <li><em><strong>Intitulé du poste :</strong></em><br> <?=$dev["poste"]?></li>
+                                                        <li><em><strong>Date de début :</strong></em><br> <?=$dev["date_debut"]?></li>
+                                                        <li><em><strong>Date de fin :</strong></em><br> <?=$dev["date_fin"]?></li>
+                                                        <li><em><strong>Employeur :</strong></em><br> <?=$dev["employeur"]?></li>
+                                                        <li><em><strong>Ville :</strong></em><br> <?=$dev["ville"]?></li>
+                                                        <li><em><strong>Description :</strong></em><br> <?=nl2br($dev["description"])?></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <?php endforeach ?>
+                                    </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div id="competences" class="modale">
+                    <div class="noClose">
+                        <div class="row">
+                            <a href="#close" title="Close" class="close">X</a>
+
+                            <div class="col-xs-12 col-md-6 offset-md-3">
+                            <h2>Mon savoir-faire</h2>
+                            <?php foreach ($competences as $competence) : ?>
+                                <ul>
+                                    <li>
+                                        <p class="competences"><?=$competence["technos"]?></p>
+                                        <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?=$competence['pourcentage']?>%" aria-valuenow="<?=$competence['pourcentage']?>" aria-valuemin="0" aria-valuemax="100"><?=$competence['pourcentage']?> %</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            <?php endforeach ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div id="qualites" class="modale">
+                    <div class="noClose">
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Mon savoir-être</h2>
+                            <div>
+                                <?php foreach ($qualites as $qualite) : ?>
+                                    <ul>
+                                        <li class="qualite"><?=$qualite["qualite"]?></li>
+                                    </ul>
+                                <?php endforeach ?>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section>
+
+                <div id="projets" class="modale">
+                    <div class="noClose">
+                        <div class="logo">
+                            <a href="#close" title="Close" class="close">X</a>
+                            <h2>Mes réalisations</h2>
+                            <div class="row">
+                                <?php foreach ($projets as $projet) : ?>
+                                    <div class="col">
+                                        <ul>
+                                            <li><?=$projet["titre"]?>
+                                            <li><a href="<?=$projet["lien"]?>" target="blank" title="<?=$projet["titre"]?>"><img alt="Logo <?=$projet["titre"]?>" src="img/<?=$projet["logo"]?>"/></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                            <div>
+                                <p><em>D'autres projets viendront compléter cette page par la suite...</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+
+                <div id="contact" class="modale">
+                    <div class="noClose">
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Contactez-moi</h2>
+
+                        <article>
+                            <?php if (array_key_exists("envoye", $_GET) && $_GET['envoye'] == 1) : ?>
+                                <p class="emailEnvoye">Votre email a bien été envoyé. Merci!</p>
+                            <?php endif ?>
+                            <ul>
+                                <li><i class="far fa-envelope"></i>Mon adresse</li>
+                                <li><i class="fas fa-at"></i>Mon mail</li>
+                                <li><i class="fas fa-phone"></i>Mon numéro de téléphone</li>
+                            </ul>
+                        </article>
+                        <p class="mt-4">ou via ce formulaire</p>
+
+                        <form id="form" action="php/form.php" method="POST">
+                            <input type="text" name="nom" id="nom" placeholder="Votre nom et prénom" value="<?=$nom?>" data-required/>
+
+                            <input type="text" name="mail" id="mail" data-type="email" placeholder="Votre adresse mail" value="<?=$mail?>" data-required/>
+
+                            <textarea rows="8" cols="45" name="message" id="message" placeholder="Votre message" data-required><?=$message?></textarea>
+
+                            <p>Tous les champs doivent être remplis</p>
+
+                            <?php if (count($errors) > 0) : ?>
+                                <ul class="errors">
+                                <?php foreach ($errors as $error) : ?>
+                                    <li><?=$error?></li>
+                                <?php endforeach ?>
+                            <?php endif ?>
+
+                            <button type="submit" class="bouton" name="envoyer">Envoyer le formulaire</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+        <script src="js/formValidation.js"></script>
+        <script src="js/popover.js"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>
