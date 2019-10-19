@@ -41,7 +41,7 @@ var displayErrors = function(){
      * 3. à chaque erreur on créée un nouvel <li>
      * 4. une fois terminé on affiche ce bloc
      */
-    var ul =  $("<ul>");
+    var ul =  $("<ul class='errors'>");
     $.each(errors, function(){
         ul.append($("<li>").html(this))
     });
@@ -79,7 +79,7 @@ var onSubmitForm = function(event){
 var init=function(){
 
     var submitForm = document.getElementById("form");
-    //submitForm.addEventListener("submit", onSubmitForm);
+    submitForm.addEventListener("submit", onSubmitForm);
 };
 
 

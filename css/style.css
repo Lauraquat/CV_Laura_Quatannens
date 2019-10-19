@@ -91,9 +91,13 @@ header img{
   box-shadow:inset -43px 27px 31px #558080;
 }
 
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  padding : 40px;
+}
+
 nav li{
-  padding: 40px 50px;
-  display: inline-block;
   font-weight: bold;
   font-size: 1.8rem;
   font-family: 'Bad Script', cursive;
@@ -342,7 +346,7 @@ img.myPopover{
   margin-top:15px;
 }
 #contact .errors li{
-  color:#f71818;
+  color:#558080;
   margin:0;
 }
 #contact .emailEnvoye {
