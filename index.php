@@ -4,54 +4,24 @@ require_once "php/connect.php";
 
 
 // récupération des formations
-$sql = "SELECT * FROM formations ORDER BY annee_obtention";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $formations
-$formations = $request->fetchAll(PDO::FETCH_ASSOC);
-
-
+$formations = $dbConnector->executeQuery("SELECT * FROM formations ORDER BY annee_obtention");
 
 // récupération des expériences d'éduc
-$sql = "SELECT * FROM experiences WHERE domaine='social' ORDER BY date_debut";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $social
-$social = $request->fetchAll(PDO::FETCH_ASSOC);
+$social = $dbConnector->executeQuery("SELECT * FROM experiences WHERE domaine='social' ORDER BY date_debut");
 $social = formatDate($social, "date_debut");
 $social = formatDate($social, "date_fin");
 
 
 
 // récupération des expériences de GP
-$sql = "SELECT * FROM experiences WHERE domaine='RH' ORDER BY date_debut";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $RH
-$RH = $request->fetchAll(PDO::FETCH_ASSOC);
+$RH = $dbConnector->executeQuery("SELECT * FROM experiences WHERE domaine='RH' ORDER BY date_debut");
 $RH = formatDate($RH, "date_debut");
 $RH = formatDate($RH, "date_fin");
 
 
 
 // récupération des expériences d'informatique
-$sql = "SELECT * FROM experiences WHERE domaine='informatique' ORDER BY date_debut";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $info
-$info = $request->fetchAll(PDO::FETCH_ASSOC);
+$info = $dbConnector->executeQuery("SELECT * FROM experiences WHERE domaine='informatique' ORDER BY date_debut");
 $info = formatDate($info, "date_debut");
 $info = formatDate($info, "date_fin");
 
@@ -70,45 +40,14 @@ function formatDate($array, $dateKey){
 }
 
 
-
-
-
-
 // récupération des compétences
-$sql = "SELECT * FROM competences";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $competences
-$competences = $request->fetchAll(PDO::FETCH_ASSOC);
-
-
-
+$competences = $dbConnector->executeQuery("SELECT * FROM competences");
 
 // récupération des qualités
-$sql = "SELECT * FROM qualites";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $qualites
-$qualites = $request->fetchAll(PDO::FETCH_ASSOC);
-
-
-
+$qualites = $dbConnector->executeQuery("SELECT * FROM qualites");
 
 // récupération des projets
-$sql = "SELECT * FROM projets";
-
-// on lance la requête préparée
-$request = $pdo->prepare($sql);
-$request->execute();
-
-// on met en forme les résultat dans le tableau $projets
-$projets = $request->fetchAll(PDO::FETCH_ASSOC);
+$projets = $dbConnector->executeQuery("SELECT * FROM projets");
 
 
 
