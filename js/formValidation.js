@@ -41,7 +41,8 @@ var displayErrors = function(){
      * 3. à chaque erreur on créée un nouvel <li>
      * 4. une fois terminé on affiche ce bloc
      */
-    var ul =  $("<ul class='errors'>");
+    $("#errors").remove();
+    var ul =  $("<ul id='errors'>");
     $.each(errors, function(){
         ul.append($("<li>").html(this))
     });

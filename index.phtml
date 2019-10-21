@@ -279,6 +279,15 @@
                         <p class="mt-4">ou via ce formulaire</p>
 
                         <form id="form" action="php/form.php" method="POST">
+
+                            <?php if (count($errors) > 0) : ?>
+                                <ul id="errors">
+                                <?php foreach ($errors as $error) : ?>
+                                    <li><?=$error?></li>
+                                <?php endforeach ?>
+                                </ul>
+                            <?php endif ?>
+
                             <input type="text" name="nom" id="nom" placeholder="Votre nom et prénom" value="<?=$nom?>" data-required/>
 
                             <input type="text" name="mail" id="mail" data-type="email" placeholder="Votre adresse mail" value="<?=$mail?>" data-required/>
@@ -287,12 +296,6 @@
 
                             <p>Tous les champs doivent être remplis</p>
 
-                            <?php if (count($errors) > 0) : ?>
-                                <ul class="errors">
-                                <?php foreach ($errors as $error) : ?>
-                                    <li><?=$error?></li>
-                                <?php endforeach ?>
-                            <?php endif ?>
 
                             <button type="submit" class="bouton" name="envoyer">Envoyer le formulaire</button>
                         </form>
