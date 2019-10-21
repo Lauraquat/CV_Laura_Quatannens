@@ -46,7 +46,7 @@ var displayErrors = function(){
     $.each(errors, function(){
         ul.append($("<li>").html(this))
     });
-    $("#form .bouton").before(ul);
+    $("#form").prepend(ul);
 };
 
 
