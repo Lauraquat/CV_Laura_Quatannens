@@ -36,18 +36,20 @@ if(array_key_exists("envoyer", $_POST)){
     // le formulaire est valide
     if (empty($data["errors"])) {
 
-        //préparation de la requête PDO pour éviter les injections SQL
-        $sql = "INSERT INTO messages  VALUES (null, ? , ? , ? , NOW())";
+        //préparation de la requête en évitant les injections SQL
+        $query= "INSERT INTO messages  VALUES (null, ? , ? , ? , NOW())";
 
-        $request = $pdo->prepare($sql);
+        // Paramétrage de l'insertion des lignes en BDD, l'ordre des variables correspond à celui des "?"
+        $insertParams= [$_POST["nom"], $_POST["mail"], $_POST["message"]];
 
-        // Insertion des lignes en BDD, l'ordre des variables correspond à celui des "?"
-        $request->execute( [$_POST["nom"], $_POST["mail"], $_POST["message"]] );
+        //lancement de la requête
+        $dbConnector->insertQuery($query, $insertParams);
 
         //si mail valide, on envoie le message
         mail($mailer_sendTo, "Envoi depuis page Contact", $_POST["message"], "From : " . $_POST["mail"]);
 
         header("location: ../index.php?envoye=1#contact");
+
     } else {
         $data["nom"] = $_POST["nom"];
         $data["mail"] = $_POST["mail"];
@@ -55,3 +57,5 @@ if(array_key_exists("envoyer", $_POST)){
         header("location: ../index.php?".http_build_query($data)."#contact");
     }
 }
+
+

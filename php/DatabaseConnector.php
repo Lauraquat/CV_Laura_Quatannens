@@ -15,11 +15,21 @@ class DatabaseConnector{
 
     public function executeQuery($query)
     {
-        // on lance la requête préparée
+        // on lance la requête préparée pour la récupération des données de la BDD
         $request = $this->pdo->prepare($query);
         $request->execute();
 
         // on met en forme les résultat dans le tableau
         return $request->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insertQuery($query, array $insertParams)
+    {
+        //on lance la requête préparée pour l'envoi du mail
+        $request = $this->pdo->prepare($query);
+
+        //on met en forme les résultats dans le tableau
+        return $request->execute[$insertParams];
+
     }
 }
