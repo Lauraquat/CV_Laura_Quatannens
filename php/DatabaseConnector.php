@@ -28,8 +28,8 @@ class DatabaseConnector{
         //on lance la requête préparée pour l'envoi du mail
         $request = $this->pdo->prepare($query);
 
-        //on met en forme les résultats dans le tableau
-        return $request->execute[$insertParams];
+        //on passe les variables à insérer dans la BDD
+        return $request->execute($insertParams);
 
     }
 }
